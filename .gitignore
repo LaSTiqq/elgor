@@ -1,0 +1,23 @@
+# Compiled Python bytecode
+*.py[cod]
+
+# Applications
+*.app
+*.exe
+*.war
+
+# Large media files
+*.mp4
+*.tiff
+*.avi
+*.flv
+*.mov
+*.wmv
+
+# Self
+templates/robots.txt
+lgor/settings.py
+lgor/static
+sitemap.xml
+.vscode
+venv
