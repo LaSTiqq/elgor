@@ -1,4 +1,5 @@
 from django import forms
+# from django.conf import settings
 # from captcha.fields import ReCaptchaField
 # from captcha.widgets import ReCaptchaV2Checkbox
 
@@ -17,7 +18,7 @@ class ContactForm(forms.Form):
     #     widget=ReCaptchaV2Checkbox(
     #         attrs={
     #             'style': 'display: flex; justify-content: center; margin-top: 0.5rem;',
-    #             'data-sitekey': '6LcFPLMkAAAAADW_nMctNbizDQnUB4JdL1dqBomi',
+    #             'data-sitekey': settings.RECAPTCHA_PUBLIC_KEY,
     #         },
     #     ),
     # )
