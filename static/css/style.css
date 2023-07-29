@@ -135,12 +135,14 @@ img {
   transition: 0.5s;
 }
 .cookie {
-  color: #000;
+  color: #22223b;
+  text-align: center;
   position: fixed;
   left: 25px;
   bottom: 25px;
-  max-width: 411px;
-  background-color: #affc41;
+  max-width: 400px;
+  background-color: #FAFBFF;
+  border: 1px solid #000;
   border-radius: 13px;
   box-shadow: 0 6px 6px rgb(0 0 0 / 25%);
   padding: 15px;
@@ -240,11 +242,13 @@ img {
 }
 
 /* Contacts & Certificates */
+.cookie a.fw-bold,
 .cnc a,
 footer a {
   color: #01398d;
   transition: 0.5s;
 }
+.cookie a.fw-bold:hover,
 .cnc a:hover,
 footer a:hover {
   color: #0979d3;
@@ -253,10 +257,8 @@ footer a:hover {
 
 @media (min-width: 319.99px) and (max-width: 359.98px) {
   .cookie {
-    margin: 5% auto;
-    left: 0;
-    right: 0;
-    bottom: -5px;
+    max-width: 305px;
+    left: 20px;
   }
   .breeds .box h4,
   .countries .box h4 {
@@ -315,10 +317,8 @@ footer a:hover {
 }
 @media (min-width: 359.99px) and (max-width: 425.98px) {
   .cookie {
-    margin: 5% auto;
-    left: 0;
-    right: 0;
-    bottom: -5px;
+    max-width: 345px;
+    left: 20px;
   }
   .breeds .box h4,
   .countries .box h4 {
