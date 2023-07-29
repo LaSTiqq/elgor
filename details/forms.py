@@ -17,6 +17,7 @@ class ContactForm(forms.Form):
         label='Captcha',
         widget=ReCaptchaV2Invisible(
             attrs={
+                'style': 'position: relative; z-index: 1001;',
                 'data-sitekey': settings.RECAPTCHA_PUBLIC_KEY,
             },
             api_params={
