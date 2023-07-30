@@ -8,12 +8,8 @@ a {
 img {
   pointer-events: none;
 }
-.navbar-brand {
-  font-size: 22px;
-  font-weight: bold;
-}
 .navbar-brand img {
-  margin-right: 15px;
+  width: 225px;
 }
 .contact-link {
   color: #000;
@@ -260,6 +256,9 @@ footer a:hover {
     max-width: 305px;
     left: 20px;
   }
+  .navbar-brand img {
+    width: 140px;
+  }
   .breeds .box h4,
   .countries .box h4 {
     line-height: 24px;
@@ -319,6 +318,9 @@ footer a:hover {
   .cookie {
     max-width: 345px;
     left: 20px;
+  }
+  .navbar-brand img {
+    width: 180px;
   }
   .breeds .box h4,
   .countries .box h4 {
