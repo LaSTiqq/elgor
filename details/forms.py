@@ -1,7 +1,7 @@
 from django import forms
 from django.conf import settings
 from captcha.fields import ReCaptchaField
-from captcha.widgets import ReCaptchaV2Invisible
+from captcha.widgets import ReCaptchaV3
 
 
 class ContactForm(forms.Form):
@@ -15,7 +15,7 @@ class ContactForm(forms.Form):
         attrs={'class': 'form-control my-1', 'rows': 10, 'placeholder': 'Message text *', 'autocomplete': 'off', 'required': True}))
     captcha = ReCaptchaField(
         label='Captcha',
-        widget=ReCaptchaV2Invisible(
+        widget=ReCaptchaV3(
             attrs={
                 'data-sitekey': settings.RECAPTCHA_PUBLIC_KEY,
             },
