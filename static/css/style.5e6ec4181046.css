@@ -581,9 +581,6 @@ footer a:hover {
   }
 }
 @media (min-width: 1921px) {
-  .navbar-brand {
-    font-size: 26px;
-  }
   .contact-link {
     font-size: 18px;
     padding: 10px 30px;
