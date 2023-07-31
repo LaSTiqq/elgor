@@ -15,7 +15,7 @@ img {
 .contact-link {
   color: #000;
   background-color: #c0c0c0;
-  font-size: 14px;
+  font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   border-radius: 50px;
@@ -138,7 +138,7 @@ img {
   left: 25px;
   bottom: 25px;
   max-width: 400px;
-  background-color: #FAFBFF;
+  background-color: #fafbff;
   border: 1px solid #000;
   border-radius: 13px;
   box-shadow: 0 6px 6px rgb(0 0 0 / 25%);
@@ -160,6 +160,20 @@ img {
 }
 .cookie p {
   color: #000;
+}
+.contact-link,
+.breeds .box h4,
+.countries .box h4,
+.digits .box h3,
+.digits .box p,
+.digits .fa-2xl,
+.roadmap h1,
+.roadmap h2,
+.cnc p.fs-5,
+.cnc li,
+footer a,
+footer p {
+  transition: font-size 0.5s;
 }
 .breeds .box,
 .countries .box {
@@ -207,7 +221,6 @@ img {
 .digits .box {
   background-color: #5e5eff;
   width: 320px;
-  height: 315px;
   border-radius: 8px;
   margin: 5px;
   transition: 0.5s;
@@ -220,7 +233,7 @@ img {
   margin-top: 70px;
 }
 .digits .fa-2xl {
-  font-size: 80px;
+  font-size: 5rem;
 }
 .digits i {
   color: #1b263b;
@@ -229,10 +242,10 @@ img {
 
 /* Roadmap */
 .roadmap h1 {
-  font-size: 66px;
+  font-size: 4.125rem;
 }
 .roadmap h2 {
-  font-size: 26px;
+  font-size: 1.625rem;
 }
 .roadmap img {
   width: 400px;
@@ -263,16 +276,16 @@ footer a:hover {
     left: 20px;
   }
   .navbar-brand img {
-    width: 140px;
-    height: 34px;
+    width: 130px;
+    height: 31px;
   }
   .breeds .box h4,
   .countries .box h4 {
     line-height: 24px;
-    font-size: 14px;
+    font-size: 0.875rem;
   }
   .breeds .box {
-    height: 230px;
+    height: 270px;
     margin-top: 20px;
   }
   .breeds img {
@@ -280,35 +293,31 @@ footer a:hover {
     height: 235px;
   }
   .countries .box {
-    height: 100px;
+    height: 110px;
     margin-bottom: 30px;
   }
   .countries img {
     width: 300px;
     height: 209px;
   }
-  .digits .box {
-    width: 145px;
-    height: 130px;
-  }
   .digits .box h3 {
-    font-size: 12px;
+    font-size: 0.75rem;
     margin-top: 25px;
   }
   .digits .box p {
-    font-size: 10px;
+    font-size: 0.625rem;
   }
   .digits i {
     margin-top: 40px;
   }
   .digits .fa-2xl {
-    font-size: 30px;
+    font-size: 1.875rem;
   }
   .roadmap h1 {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
   .roadmap h2 {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
   .roadmap img {
     width: 220px;
@@ -321,7 +330,7 @@ footer a:hover {
   }
   footer a,
   footer p {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 }
 @media (min-width: 359.99px) and (max-width: 425.98px) {
@@ -330,13 +339,13 @@ footer a:hover {
     left: 20px;
   }
   .navbar-brand img {
-    width: 180px;
-    height: 43px;
+    width: 170px;
+    height: 41px;
   }
   .breeds .box h4,
   .countries .box h4 {
     line-height: 24px;
-    font-size: 14px;
+    font-size: 0.875rem;
   }
   .breeds .box {
     height: 230px;
@@ -354,28 +363,24 @@ footer a:hover {
     width: 340px;
     height: 237px;
   }
-  .digits .box {
-    width: 170px;
-    height: 155px;
-  }
   .digits .box h3 {
-    font-size: 14px;
+    font-size: 0.875rem;
     margin-top: 25px;
   }
   .digits .box p {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
   .digits i {
     margin-top: 40px;
   }
   .digits .fa-2xl {
-    font-size: 30px;
+    font-size: 1.875rem;
   }
   .roadmap h1 {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
   .roadmap h2 {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
   .roadmap img {
     width: 275px;
@@ -388,14 +393,14 @@ footer a:hover {
   }
   footer a,
   footer p {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 }
 @media (min-width: 425.99px) and (max-width: 575.98px) {
   .breeds .box h4,
   .countries .box h4 {
     line-height: 24px;
-    font-size: 14px;
+    font-size: 0.875rem;
   }
   .breeds .box {
     height: 180px;
@@ -413,28 +418,24 @@ footer a:hover {
     width: 425px;
     height: 296px;
   }
-  .digits .box {
-    width: 210px;
-    height: 195px;
-  }
   .digits .box h3 {
-    font-size: 14px;
+    font-size: 0.875rem;
     margin-top: 35px;
   }
   .digits .box p {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
   .digits i {
     margin-top: 60px;
   }
   .digits .fa-2xl {
-    font-size: 50px;
+    font-size: 3.125rem;
   }
   .roadmap h1 {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
   .roadmap h2 {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
   .roadmap img {
     width: 300px;
@@ -445,14 +446,14 @@ footer a:hover {
   }
   footer a,
   footer p {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 }
 @media (min-width: 575.99px) and (max-width: 767.98px) {
   .breeds .box h4,
   .countries .box h4 {
     line-height: 24px;
-    font-size: 14px;
+    font-size: 0.875rem;
   }
   .breeds .box {
     height: 150px;
@@ -470,28 +471,24 @@ footer a:hover {
     width: 540px;
     height: 376px;
   }
-  .digits .box {
-    width: 260px;
-    height: 245px;
-  }
   .digits .box h3 {
-    font-size: 18px;
+    font-size: 1.125rem;
     margin-top: 50px;
   }
   .digits .box p {
-    font-size: 16px;
+    font-size: 1rem;
   }
   .digits i {
     margin-top: 80px;
   }
   .digits .fa-2xl {
-    font-size: 60px;
+    font-size: 3.75rem;
   }
   .roadmap h1 {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
   .roadmap h2 {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
   .cnc img {
     margin-bottom: 15px;
@@ -501,7 +498,7 @@ footer a:hover {
   .breeds .box h4,
   .countries .box h4 {
     line-height: 24px;
-    font-size: 14px;
+    font-size: 0.875rem;
   }
   .breeds .box {
     width: 260px;
@@ -518,25 +515,21 @@ footer a:hover {
     width: 520px;
     height: 362px;
   }
-  .digits .box {
-    width: 350px;
-    height: 345px;
-  }
   .digits .box h3 {
-    font-size: 24px;
+    font-size: 1.5rem;
     margin-top: 70px;
   }
   .digits .box p {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
   .digits .fa-2xl {
-    font-size: 80px;
+    font-size: 5rem;
   }
 }
 @media (min-width: 991.99px) and (max-width: 1199.98px) {
   .breeds .box h4,
   .countries .box h4 {
-    font-size: 16px;
+    font-size: 1rem;
   }
   .breeds .box {
     width: 370px;
@@ -553,28 +546,24 @@ footer a:hover {
     width: 710px;
     height: 494px;
   }
-  .digits .box {
-    width: 230px;
-    height: 225px;
-  }
   .digits .box h3 {
-    font-size: 16px;
+    font-size: 1rem;
     margin-top: 50px;
   }
   .digits .box p {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
   .digits i {
     margin-top: 80px;
   }
   .digits .fa-2xl {
-    font-size: 60px;
+    font-size: 3.75rem;
   }
 }
 @media (min-width: 1199.99px) and (max-width: 1399.98px) {
   .breeds .box h4,
   .countries .box h4 {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
   .breeds .box {
     width: 430px;
@@ -591,17 +580,13 @@ footer a:hover {
     width: 830px;
     height: 578px;
   }
-  .digits .box {
-    width: 270px;
-    height: 265px;
-  }
   .digits .box h3 {
     margin-top: 60px;
   }
 }
 @media (min-width: 1921px) {
   .contact-link {
-    font-size: 18px;
+    font-size: 1.125rem;
     padding: 10px 30px;
   }
   .breeds .box {
@@ -614,7 +599,7 @@ footer a:hover {
   }
   .breeds .box h4,
   .countries .box h4 {
-    font-size: 26px;
+    font-size: 1.625rem;
     line-height: 36px;
   }
   .breeds img {
@@ -622,13 +607,11 @@ footer a:hover {
     height: 465px;
   }
   .roadmap h1 {
-    font-size: 88px;
+    font-size: 5.5rem;
   }
-  .roadmap h2 {
-    font-size: 36px;
-  }
+  .roadmap h2,
   .roadmap h3 {
-    font-size: 36px;
+    font-size: 2.25rem;
   }
   .roadmap img {
     width: 500px;
@@ -639,10 +622,10 @@ footer a:hover {
   }
   .cnc p.fs-5,
   .cnc li {
-    font-size: 30px !important;
+    font-size: 1.875rem !important;
   }
   footer a,
   footer p {
-    font-size: 22px;
+    font-size: 1.375rem;
   }
 }
