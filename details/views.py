@@ -35,7 +35,7 @@ def send(request):
                     form.cleaned_data['subject'],
                     text_content,
                     settings.EMAIL_HOST_USER,
-                    ['lavrencij@inbox.lv']
+                    ['forvest@inbox.lv']
                 )
                 email.attach_alternative(html_content, 'text/html')
                 email.send()
