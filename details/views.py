@@ -10,15 +10,17 @@ import re
 
 
 def restricted_found(text):
-    url_pattern = r"(?:http[s]?://|www\.)[^\s/$.?#].[^\s]*"
-    restricted_keywords = ["WhatsApp", "whatsapp", "Telegram", "telegram", "tg", "Телеграм", "телеграм", "тг", "Телега", "телега",
-                           "Discord", "discord", "Дискорд", "дискорд", "Viber", "viber", "Вайбер", "вайбер", "Аська", "аська", "icq", "ICQ",
-                           "Skype", "skype", "Скайп", "скайп", "рублей", "rub", "RUB", "Bonus", "bonus", "Free", "free", "Gift", "gift",
-                           "Order now", "order now", "Spam", "spam", "Website", "website", "Visit our", "visit our", "Earn", "earn"]
+    url_pattern = re.compile(
+        r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+')
+    restricted_keywords = ["whatsapp", "telegram", "тг", "телега", "tg", "viber", "вайбер", "аська", "icq", "skype", "скайп", "rub", "руб",
+                           "bonus", "free", "gift", "order now", "spam", "website", "visit our", "earn", "congratulations",
+                           "don't miss", "buy now", "limited time", "exclusive offer", "act fast", "special deal", "discount", "sale"]
+
+    text_lower = text.lower()
 
     has_link = bool(re.search(url_pattern, text))
-    has_restricted_keyword = any(
-        keyword in text for keyword in restricted_keywords)
+    has_restricted_keyword = any(re.search(
+        r'\b' + re.escape(keyword) + r'\b', text_lower) for keyword in restricted_keywords)
 
     return has_link or has_restricted_keyword
 
@@ -34,7 +36,7 @@ def send(request):
             }
             if restricted_found(body['content']):
                 messages.warning(
-                    request, "You wrote something that isn't allowed! Message is not sent")
+                    request, 'You wrote something disallowed or pasted a link and the message is not being sent. Try again.')
                 return redirect('/#contacts')
             html_content = render_to_string('email.html', {
                                             'name': body['name'], 'sender': body['sender'], 'content': body['content']})
@@ -52,11 +54,11 @@ def send(request):
                 return redirect('/#contacts')
             except SMTPException:
                 messages.error(
-                    request, 'Something went wrong, please, try again')
+                    request, 'Something went wrong and the message is not being sent. Try again.')
                 return redirect('/#contacts')
         else:
             messages.warning(
-                request, "Google thinks that you're not a human, please try again")
+                request, "Google thinks that you're not a human and the message is not being sent. Try again.")
             return redirect('/#contacts')
     else:
         form = ContactForm()
