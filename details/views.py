@@ -12,9 +12,9 @@ import re
 def restricted_found(text):
     url_pattern = re.compile(
         r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+')
-    restricted_keywords = ["whatsapp", "telegram", "тг", "телега", "tg", "viber", "вайбер", "аська", "icq", "skype", "скайп", "rub", "руб",
-                           "bonus", "free", "gift", "order now", "spam", "website", "visit our", "earn", "congratulations",
-                           "don't miss", "buy now", "limited time", "exclusive offer", "act fast", "special deal", "discount", "sale"]
+    restricted_keywords = ["whatsapp", "telegram", "тг", "телеграм", "телега", "tg", "viber", "вайбер", "discord", "дискорд", "аська", "icq",
+                           "skype", "скайп", "rub", "рублей" "руб", "bonus", "free", "gift", "order now", "spam", "website", "visit our", "earn",
+                           "congratulations", "don't miss", "buy now", "limited time", "exclusive offer", "act fast", "special deal", "discount", "sale"]
 
     text_lower = text.lower()
 
@@ -50,7 +50,7 @@ def send(request):
                 )
                 email.attach_alternative(html_content, 'text/html')
                 email.send()
-                messages.success(request, 'Message sent')
+                messages.success(request, 'Message sent!')
                 return redirect('/#contacts')
             except SMTPException:
                 messages.error(
