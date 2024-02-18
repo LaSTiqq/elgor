@@ -13,14 +13,12 @@ def restricted_found(text):
     url_pattern = re.compile(
         r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+')
     restricted_keywords = ["whatsapp", "telegram", "тг", "телеграм", "телега", "tg", "viber", "вайбер", "discord", "дискорд", "аська", "icq",
-                           "skype", "скайп", "rub", "рублей" "руб", "bonus", "free", "gift", "order now", "spam", "website", "visit our", "earn",
-                           "congratulations", "don't miss", "buy now", "limited time", "exclusive offer", "act fast", "special deal", "discount", "sale"]
-
-    text_lower = text.lower()
+                           "skype", "скайп", "rub", "рублей" "руб", "dollars", "eur", "bonus", "free", "gift", "order now", "spam", "website", "visit our",
+                           "earn", "congratulations", "don't miss", "buy now", "limited time", "exclusive offer", "act fast", "special deal", "discount", "sale"]
 
     has_link = bool(re.search(url_pattern, text))
     has_restricted_keyword = any(re.search(
-        r'\b' + re.escape(keyword) + r'\b', text_lower) for keyword in restricted_keywords)
+        r'\b' + re.escape(keyword) + r'\b', text, flags=re.IGNORECASE) for keyword in restricted_keywords)
 
     return has_link or has_restricted_keyword
 
@@ -34,9 +32,13 @@ def send(request):
                 'sender': form.cleaned_data['sender'],
                 'content': form.cleaned_data['content'],
             }
-            if restricted_found(body['content']):
+            if restricted_found(form.cleaned_data['subject']):
                 messages.warning(
-                    request, 'You wrote something disallowed or pasted a link and the message is not being sent. Try again.')
+                    request, 'You wrote something disallowed and the message is not being sent. Try again.')
+                return redirect('/#contacts')
+            elif restricted_found(body['content']):
+                messages.warning(
+                    request, 'You wrote something disallowed and the message is not being sent. Try again.')
                 return redirect('/#contacts')
             html_content = render_to_string('email.html', {
                                             'name': body['name'], 'sender': body['sender'], 'content': body['content']})

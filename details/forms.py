@@ -12,7 +12,7 @@ class ContactForm(forms.Form):
     subject = forms.CharField(label='Topic', widget=forms.TextInput(
         attrs={'class': 'form-control my-1', 'placeholder': 'Message topic *', 'autocomplete': 'off', 'required': True, 'maxlength': '30'}))
     content = forms.CharField(label='Text', widget=forms.Textarea(
-        attrs={'class': 'form-control my-1', 'rows': 10, 'placeholder': 'Message text *', 'autocomplete': 'off', 'required': True}))
+        attrs={'class': 'form-control my-1', 'rows': 10, 'placeholder': 'Message text *', 'autocomplete': 'off', 'required': True}), min_length=77)
     captcha = ReCaptchaField(
         label='Captcha',
         widget=ReCaptchaV3(
