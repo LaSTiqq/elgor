@@ -9,7 +9,9 @@ if (closeButton && alertElement) {
 
 const elem = document.querySelector(".main-carousel");
 let flkty = new Flickity(elem, {
+  accessibility: true,
   cellAlign: "left",
+  draggable: ">1",
   wrapAround: true,
   pageDots: false,
   autoPlay: true,

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="row breeds mt-4 mt-xl-5">
+<div class="row breeds pt-4 pt-xl-5">
 	<!-- Breeds -->
 	<div class="col-12 col-md-7">
 		<div class="main-carousel">
@@ -66,7 +66,7 @@
 		</div>
 	</div>
 	<div class="col-12 d-flex justify-content-center">
-		<a class="contact-link fw-bold mt-3" href="#how_it_works">Learn more</a>
+		<a class="contact-link fw-bold focus-ring mt-3" href="#how_it_works">Learn more</a>
 	</div>
 </div>
 <hr>
@@ -91,28 +91,28 @@
 	<!-- Digits -->
 	<div class="col-6 col-lg-3">
 		<div class="box d-flex flex-column justify-content-center align-items-center">
-			<i class="fa-solid fa-calendar-days fa-2xl"></i>
+			<i class="bi bi-calendar3"></i>
 			<h3 class="text-white fw-bold">10+</h3>
-			<p class="text-center text-white px-4">Total years of experience</p>
+			<p class="text-center text-white px-1 px-lg-4">Total years of experience</p>
 		</div>
 	</div>
 	<div class="col-6 col-lg-3">
 		<div class="box d-flex flex-column justify-content-center align-items-center">
-			<i class="fa-solid fa-truck fa-2xl"></i>
+			<i class="bi bi-truck"></i>
 			<h3 class="text-white fw-bold">420</h3>
-			<p class="text-center text-white px-4">Total cargo sent in 2022</p>
+			<p class="text-center text-white px-1 px-lg-4">Total cargo sent in 2022</p>
 		</div>
 	</div>
 	<div class="col-6 col-lg-3">
 		<div class="box d-flex flex-column justify-content-center align-items-center">
-			<i class="fa-solid fa-sack-dollar fa-2xl"></i>
+			<i class="bi bi-cash-stack"></i>
 			<h3 class="text-white fw-bold">2.3kk</h3>
-			<p class="text-center text-white px-4">Total cash flow in 2022</p>
+			<p class="text-center text-white px-1 px-lg-4">Total cash flow in 2022</p>
 		</div>
 	</div>
 	<div class="col-6 col-lg-3">
 		<div class="box d-flex flex-column justify-content-center align-items-center">
-			<i class="fa-solid fa-handshake-simple fa-2xl"></i>
+			<i class="bi bi-briefcase"></i>
 			<h3 class="text-white fw-bold">15</h3>
 			<p class="text-center text-white px-1 px-lg-4">Total agreements in 2022</p>
 		</div>
@@ -178,25 +178,23 @@
 	<!-- Contacts & Certificates-->
 	<a name="contacts"></a>
 	<div class="col-12 col-md-8">
-		<p class="text-center fs-5"><i class="fa-solid fa-bullhorn"></i>&nbsp;You can reach us
+		<p class="text-center fs-5"><i class="bi bi-megaphone"></i>&nbsp;You can reach us
 			directly through:</p>
 		<ul class="list-unstyled">
 			<li class="text-center fs-5">
-				<i class="fa-solid fa-phone"></i>&nbsp;<strong>Phone</strong>:
-				<a href="tel:+37126677812" class="fw-bold">+371 26 677 812</a> (in Russian)
+				<i class="bi bi-telephone"></i><span class="fw-bold">&nbsp;Phone</span>:
+				<a href="tel:+37126677812" class="focus-ring">+371 26 677 812</a> (in Russian)
 			</li>
 			<li class="text-center fs-5">
-				<i class="fa-solid fa-envelope"></i>&nbsp;<strong>Email</strong>:
-				<a href="mailto:forvest@inbox.lv" class="fw-bold">forvest@inbox.lv</a> (in English)
+				<i class="bi bi-envelope"></i><span class="fw-bold">&nbsp;Email</span>:
+				<a href="mailto:forvest@inbox.lv" class="focus-ring">forvest@inbox.lv</a> (in English)
 			</li>
 		</ul>
-		<p class="text-center fs-5">Or using the form below:&nbsp;
-			<i class="fa-solid fa-arrow-turn-down"></i>
-		</p>
+		<p class="text-center fs-5">Or using the form below:</p>
 		{% for message in messages %}
-		<div class="alert alert-{{ message.tags }} alert-dismissible rounded-pill fw-bold" role="alert">
+		<div class="alert alert-{{ message.tags }} alert-dismissible rounded-pill fw-bold">
 			{{ message }}
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			<button type="button" class="btn-close" aria-label="Close"></button>
 		</div>
 		{% endfor %}
 		<form method="post" class="d-flex flex-column">
@@ -206,14 +204,14 @@
 			{{ form.subject }}
 			{{ form.content }}
 			{{ form.captcha }}
-			<p class="text-center text-muted mb-0">
+			<p class="text-center text-body-secondary mb-0">
 				<small>Please double check your email before submitting as
 					we can't respond to the wrong ones.</small>
 			</p>
-			<button type="submit" class="contact-link fw-bold mx-auto my-2">Submit</button>
+			<button type="submit" class="contact-link fw-bold mx-auto focus-ring my-2">Submit</button>
 		</form>
-		<p class="text-center fs-5">We'll do our best to respond as soon as possible!&nbsp;
-			<i class="fa-regular fa-circle-check"></i>
+		<p class="text-center fs-5">We'll do our best to respond as soon as possible!
+			<i class="bi bi-check-circle"></i>
 		</p>
 	</div>
 	<div class="col-md-4 d-flex justify-content-center align-items-center">
