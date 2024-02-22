@@ -16,11 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
     pageDots: false,
     autoPlay: true,
     pauseAutoPlayOnHover: false,
-    imagesLoaded: true,
   });
 
-  imagesLoaded(elem, function () {
-    elem.style.visibility = "visible";
-    flkty.reloadCells();
-  });
+  elem.style.visibility = "visible";
+  flkty.reloadCells();
 });
