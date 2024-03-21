@@ -18,6 +18,5 @@
 templates/robots.txt
 lgor/settings.py
 lgor/static
-sitemap.xml
 .vscode
 venv
