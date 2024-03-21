@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     pageDots: false,
     autoPlay: true,
     pauseAutoPlayOnHover: false,
+    setGallerySize: false,
   });
 
   elem.style.visibility = "visible";
