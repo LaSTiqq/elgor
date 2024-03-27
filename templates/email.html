@@ -7,13 +7,14 @@
 </head>
 
 <body>
-    <h3 style="text-align:center">Вам пришло письмо с сайта <a target="_blank" href="https://www.elgor.lv">elgor.lv</a>
-    </h3>
-    <div style="border: 1px solid black; width: 695px; margin: 0 auto">
-        <p style="margin-left: 3px; margin-right: 3px"><strong>Имя отправителя: </strong>{{ name }}</p>
-        <p style="margin-left: 3px; margin-right: 3px"><strong>Почта отправителя: </strong><a
-                href="mailto:{{sender}}">{{sender}}</a></p>
-        <p style="margin-left: 3px; margin-right: 3px"><strong>Текст: </strong><br><i>{{ content }}</i></p>
+    <h2 style="text-align: center">Вам пришло письмо с сайта <a target="_blank" href="https://www.elgor.lv">elgor.lv</a>
+    </h2>
+    <div style="border: 1px solid black; width: 725px; margin: 0 auto">
+        <p style="margin: 0 3px;"><strong>Имя отправителя: </strong>{{ name }}</p>
+        <p style="margin: 0 3px;"><strong>Почта отправителя: </strong>
+            <a href="mailto:{{sender}}">{{ sender }}</a>
+        </p>
+        <p style="margin: 0 3px;"><strong>Текст: </strong><br><i>{{ content }}</i></p>
     </div>
 </body>
 
