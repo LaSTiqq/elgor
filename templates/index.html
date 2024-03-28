@@ -178,21 +178,20 @@
 	<!-- Contacts & Certificates-->
 	<a name="contacts"></a>
 	<div class="col-12 col-md-8">
-		<p class="text-center fs-5"><i class="fa-solid fa-bullhorn"></i>&nbsp;You can reach us
-			directly through:</p>
+		<h4 class="text-center"><i class="fa-solid fa-bullhorn"></i>&nbsp;You can reach us directly through:</h4>
 		<ul class="list-unstyled">
 			<li class="text-center fs-5">
 				<i class="fa-solid fa-phone"></i><span class="fw-bold">&nbsp;Phone</span>:
-				<a href="tel:+37126677812" class="focus-ring fw-bold">+371 26 677 812</a> (in Russian)
+				<a href="tel:+37126677812" class="focus-ring fw-bold">(+371) 26 677 812</a> (in Russian)
 			</li>
 			<li class="text-center fs-5">
 				<i class="fa-solid fa-envelope"></i><span class="fw-bold">&nbsp;Email</span>:
 				<a href="mailto:forvest@inbox.lv" class="focus-ring fw-bold">forvest@inbox.lv</a> (in English)
 			</li>
 		</ul>
-		<p class="text-center fs-5">Or using the form below:
+		<h5 class="text-center">Or using the form below:
 			<i class="fa-solid fa-arrow-turn-down"></i>
-		</p>
+		</h5>
 		{% for message in messages %}
 		<div class="alert alert-{{ message.tags }} alert-dismissible rounded-pill fw-bold">
 			{{ message }}
@@ -207,14 +206,10 @@
 			{{ form.content }}
 			{{ form.captcha }}
 			<p class="text-center text-body-secondary mb-0">
-				<small>Please double check your email before submitting as
-					we can't respond to the wrong ones.</small>
+				<small>Please double check your email before submitting as we can't respond to the wrong ones.</small>
 			</p>
-			<button type="submit" class="contact-link fw-bold mx-auto focus-ring my-2">Submit</button>
+			<button type="submit" class="contact-link mx-auto focus-ring fw-bold my-2">Submit</button>
 		</form>
-		<p class="text-center fs-5">We'll do our best to respond as soon as possible!
-			<i class="fa-regular fa-circle-check"></i>
-		</p>
 	</div>
 	<div class="col-md-4 d-flex justify-content-center align-items-center">
 		<picture>
