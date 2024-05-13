@@ -12,8 +12,8 @@ import re
 def restricted_found(text):
     url_pattern = re.compile(
         r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+')
-    restricted_keywords = ["whatsapp", "telegram", "тг", "телеграм", "телега", "tg", "viber", "вайбер", "discord", "дискорд", "аська", "icq",
-                           "skype", "скайп", "rub", "рублей" "руб", "dollars", "eur", "bonus", "free", "gift", "order now", "spam", "website", "visit our",
+    restricted_keywords = ["whatsapp", "telegram", "тг", "телеграм", "телега", "tg", "viber", "вайбер", "discord", "дискорд", "аська", "icq", "porn", "loli", "xxx",
+                           "skype", "скайп", "rub", "рублей", "руб", "dollars", "eur", "bonus", "free", "gift", "order now", "spam", "website", "visit our",
                            "earn", "congratulations", "don't miss", "buy now", "limited time", "exclusive offer", "act fast", "special deal", "discount", "sale"]
 
     has_link = bool(re.search(url_pattern, text))
@@ -27,21 +27,22 @@ def send(request):
     if request.method == 'POST':
         form = ContactForm(data=request.POST)
         if form.is_valid():
-            body = {
-                'name': form.cleaned_data['name'],
-                'sender': form.cleaned_data['sender'],
-                'content': form.cleaned_data['content'],
-            }
-            if restricted_found(form.cleaned_data['subject']):
+            if restricted_found(form.cleaned_data['name']):
                 messages.warning(
                     request, 'You wrote something disallowed and the message is not being sent. Try again.')
                 return redirect('/#contacts')
-            elif restricted_found(body['content']):
+            elif restricted_found(form.cleaned_data['subject']):
+                messages.warning(
+                    request, 'You wrote something disallowed and the message is not being sent. Try again.')
+                return redirect('/#contacts')
+            elif restricted_found(form.cleaned_data['content']):
                 messages.warning(
                     request, 'You wrote something disallowed and the message is not being sent. Try again.')
                 return redirect('/#contacts')
             html_content = render_to_string('email.html', {
-                                            'name': body['name'], 'sender': body['sender'], 'content': body['content']})
+                                            'name': form.cleaned_data['name'],
+                                            'sender': form.cleaned_data['sender'],
+                                            'content': form.cleaned_data['content']})
             text_content = strip_tags(html_content)
             try:
                 email = EmailMultiAlternatives(
@@ -59,7 +60,7 @@ def send(request):
                     request, 'Something went wrong and the message is not being sent. Try again.')
                 return redirect('/#contacts')
         else:
-            messages.warning(
+            messages.error(
                 request, "Google thinks that you're not a human and the message is not being sent. Try again.")
             return redirect('/#contacts')
     else:
