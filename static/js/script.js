@@ -1,13 +1,13 @@
-const closeButton = document.querySelector(".btn-close");
-const alertElement = document.querySelector(".alert");
-const carouselElem = document.querySelector(".main-carousel");
+// Arrow to the top of the page
 const arrow = document.getElementById("arrow");
 
-// Arrow to the top of the page
 arrow.style.display = "none";
 
 const scrollFunction = () => {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+  const scrolled =
+    document.body.scrollTop > 50 || document.documentElement.scrollTop > 50;
+
+  if (scrolled) {
     arrow.style.display = "block";
   } else {
     arrow.style.display = "none";
@@ -19,6 +19,9 @@ window.onscroll = () => {
 };
 
 // Working form alert button without Bootstrap JS
+const closeButton = document.querySelector(".btn-close");
+const alertElement = document.querySelector(".alert");
+
 if (closeButton && alertElement) {
   closeButton.addEventListener("click", () => {
     alertElement.style.display = "none";
@@ -26,14 +29,15 @@ if (closeButton && alertElement) {
 }
 
 // Lighthouse audit low score fix
-document.addEventListener("DOMContentLoaded", function () {
-  let flkty = new Flickity(carouselElem, {
+const carousel = document.querySelector(".main-carousel");
+
+document.addEventListener("DOMContentLoaded", () => {
+  let flkty = new Flickity(carousel, {
     wrapAround: true,
     pageDots: false,
+    cellAlign: "left",
     autoPlay: true,
     pauseAutoPlayOnHover: false,
     setGallerySize: false,
   });
-
-  carouselElem.style.visibility = "visible";
 });
