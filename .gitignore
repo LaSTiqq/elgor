@@ -16,7 +16,6 @@
 
 # Self
 templates/robots.txt
-lgor/settings.py
-lgor/static
-.vscode
+elgor/settings.py
+elgor/static
 venv
