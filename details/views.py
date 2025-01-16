@@ -54,11 +54,11 @@ def send(request):
                 messages.success(request, "Message sent")
                 return redirect('/#contacts')
             except SMTPException:
-                messages.error(
+                messages.danger(
                     request, "Something went wrong! Try again.")
                 return redirect('/#contacts')
         else:
-            messages.error(
+            messages.warning(
                 request, "Google thinks that you're not a human! Try again.")
             return redirect('/#contacts')
     else:
