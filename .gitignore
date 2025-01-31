@@ -15,9 +15,9 @@
 *.wmv
 
 # Self
-templates/robots.txt
 elgor/settings.py
 elgor/static
 details/utils.py
 keywords.json
 venv
+.env
