@@ -39,9 +39,7 @@ def send(request):
                     request, "Something went wrong! Try again.")
                 return redirect('/#contacts')
         else:
-            messages.warning(
-                request, "Google thinks that you're not a human! Try again.")
-            return redirect('/#contacts')
+            return render(request, 'index.html', {"form": form})
     else:
         form = ContactForm()
     return render(request, 'index.html', {"form": form})
