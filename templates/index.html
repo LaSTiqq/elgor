@@ -235,14 +235,50 @@
 					</div>
 					{% endif %}
 					{% endfor %}
-					<form method="post" class="d-flex flex-column">
+					<form method="post" class="d-flex flex-column was-validated">
 						{% csrf_token %}
-						{{ form.name }}
-						{{ form.sender }}
-						{{ form.subject }}
-						{{ form.content }}
+						<div class="form-floating">
+							{{ form.name }}
+							<label for="name">Name<span class="text-danger">*</span></label>
+							<div class="valid-feedback">
+								OK!
+							</div>
+							<div class="invalid-feedback">
+								Please enter a valid name!
+							</div>
+						</div>
+						<div class="form-floating">
+							{{ form.sender }}
+							<label for="email">Email<span class="text-danger">*</span></label>
+							<div class="valid-feedback">
+								OK!
+							</div>
+							<div class="invalid-feedback">
+								Please enter a valid email address!
+							</div>
+						</div>
+						<div class="form-floating">
+							{{ form.subject }}
+							<label for="subject">Topic<span class="text-danger">*</span></label>
+							<div class="valid-feedback">
+								OK!
+							</div>
+							<div class="invalid-feedback">
+								Please enter a valid topic!
+							</div>
+						</div>
+						<div class="form-floating">
+							{{ form.content }}
+							<label for="message">Message<span class="text-danger">*</span></label>
+							<div class="valid-feedback">
+								OK!
+							</div>
+							<div class="invalid-feedback">
+								Please enter a valid message at least 20 characters long!
+							</div>
+						</div>
 						{{ form.captcha }}
-						<small class="text-center text-body-secondary mb-0">
+						<small class="text-center text-body-secondary mb-0 mt-2">
 							This site is protected by reCAPTCHA and the Google
 							<a href="https://policies.google.com/privacy" target="_blank" rel="norefferer"
 								class="focus-ring">Privacy
