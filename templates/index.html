@@ -219,23 +219,11 @@
 					<h4 class="text-center mb-3">Use the form below:
 						<i class="fa-solid fa-arrow-turn-down"></i>
 					</h4>
-					{% for message in messages %}
-					<div class="alert alert-{{ message.tags }} alert-dismissible rounded-pill fw-bold">
-						{{ message }}
-						<button type="button" class="btn-close" aria-label="Close"></button>
+					<div id="loader" class="text-center d-none">
+						<div class="spinner-border text-success mb-2" role="status" aria-hidden="true"></div>
 					</div>
-					{% endfor %}
-					{% for field in form %}
-					{% if field.errors %}
-					<div class="alert alert-warning alert-dismissible fw-bold" role="alert">
-						{% for error in field.errors %}
-						{{ error }}
-						{% endfor %}
-						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-					</div>
-					{% endif %}
-					{% endfor %}
-					<form method="post" class="d-flex flex-column was-validated">
+					<div id="alert" class="d-none" role="alert"></div>
+					<form method="post" class="was-validated" id="form">
 						{% csrf_token %}
 						<div class="form-floating">
 							{{ form.name }}
@@ -248,7 +236,7 @@
 							</div>
 						</div>
 						<div class="form-floating">
-							{{ form.sender }}
+							{{ form.email }}
 							<label for="email">Email<span class="text-danger">*</span></label>
 							<div class="valid-feedback">
 								OK!
@@ -259,16 +247,16 @@
 						</div>
 						<div class="form-floating">
 							{{ form.subject }}
-							<label for="subject">Topic<span class="text-danger">*</span></label>
+							<label for="subject">Subject<span class="text-danger">*</span></label>
 							<div class="valid-feedback">
 								OK!
 							</div>
 							<div class="invalid-feedback">
-								Please enter a valid topic!
+								Please enter a valid subject!
 							</div>
 						</div>
 						<div class="form-floating">
-							{{ form.content }}
+							{{ form.message }}
 							<label for="message">Message<span class="text-danger">*</span></label>
 							<div class="valid-feedback">
 								OK!
@@ -277,8 +265,12 @@
 								Please enter a valid message at least 20 characters long!
 							</div>
 						</div>
-						{{ form.captcha }}
-						<small class="text-center text-body-secondary mb-0 mt-2">
+						<input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+						<button type="submit"
+							class="contact-link d-block mx-auto focus-ring fw-bold my-2">Submit</button>
+					</form>
+					<div class="text-center mb-1">
+						<small class="fw-bold">
 							This site is protected by reCAPTCHA and the Google
 							<a href="https://policies.google.com/privacy" target="_blank" rel="norefferer"
 								class="focus-ring">Privacy
@@ -287,8 +279,7 @@
 								class="focus-ring">Terms of
 								Service</a> apply.
 						</small>
-						<button type="submit" class="contact-link mx-auto focus-ring fw-bold my-2">Submit</button>
-					</form>
+					</div>
 				</div>
 			</div>
 		</section>
