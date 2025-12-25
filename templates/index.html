@@ -223,7 +223,7 @@
 						<div class="spinner-border text-success mb-2" role="status" aria-hidden="true"></div>
 					</div>
 					<div id="alert" class="d-none" role="alert"></div>
-					<form method="post" class="was-validated" id="form">
+					<form class="needs-validation" novalidate id="form">
 						{% csrf_token %}
 						<div class="form-floating">
 							{{ form.name }}
@@ -242,7 +242,7 @@
 								OK!
 							</div>
 							<div class="invalid-feedback">
-								Please enter a valid email address!
+								Please enter a valid email address! ****@***.**
 							</div>
 						</div>
 						<div class="form-floating">

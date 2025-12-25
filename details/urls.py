@@ -17,7 +17,7 @@ def sitemap(request):
 
 urlpatterns = [
     path('', home, name='home'),
-    path('send-ajax/', send_ajax, name='send_ajax'),
+    path('send-ajax', send_ajax, name='send_ajax'),
     path('sitemap.xml', sitemap),
     path('robots.txt', TemplateView.as_view(
         template_name='robots.txt', content_type="text/plain")),
